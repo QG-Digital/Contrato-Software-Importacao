@@ -1,6 +1,6 @@
 // Configuração da API do Telegram
-const TELEGRAM_BOT_TOKEN = '8482589895:AAFlniNLs23lKqb4e7_nxvFHA9nU9NoeJF0'; // Substitua pelo seu token
-const TELEGRAM_CHAT_ID = '5581669828'; // Substitua pelo seu chat ID
+const TELEGRAM_BOT_TOKEN = '8482589895:AAFlniNLs23lKqb4e7_nxvFHA9nU9NoeJF0';
+const TELEGRAM_CHAT_ID = '5581669828';
 
 // Elementos do DOM
 const nomeInput = document.getElementById('nome');
@@ -9,7 +9,8 @@ const docInput = document.getElementById('documento');
 const emailInput = document.getElementById('email');
 const telefoneInput = document.getElementById('telefone');
 const termosCheck = document.getElementById('termos');
-const dadosCheck = document.getElementById('dados');
+const lgpdCheck = document.getElementById('lgpd'); // CORRIGIDO: de dados para lgpd
+const eletronicoCheck = document.getElementById('eletronico'); // NOVO: adicionado este checkbox
 const acceptButton = document.getElementById('accept-button');
 const loadingElement = document.getElementById('loading');
 const successElement = document.getElementById('success-message');
@@ -110,15 +111,17 @@ function validateForm() {
         isValid = false;
     }
     
-    // Validar checkboxes
-    if (!termosCheck.checked || !dadosCheck.checked) {
+    // Validar checkboxes - CORRIGIDO: verificar os 3 checkboxes que existem no HTML
+    if (!termosCheck.checked || !lgpdCheck.checked || !eletronicoCheck.checked) {
         isValid = false;
     }
     
     // Habilitar ou desabilitar o botão
     if (isValid) {
+        acceptButton.disabled = false;
         acceptButton.classList.add('btn-enabled');
     } else {
+        acceptButton.disabled = true;
         acceptButton.classList.remove('btn-enabled');
     }
     
@@ -132,7 +135,8 @@ docInput.addEventListener('input', validateForm);
 emailInput.addEventListener('input', validateForm);
 telefoneInput.addEventListener('input', validateForm);
 termosCheck.addEventListener('change', validateForm);
-dadosCheck.addEventListener('change', validateForm);
+lgpdCheck.addEventListener('change', validateForm); // CORRIGIDO: de dados para lgpd
+eletronicoCheck.addEventListener('change', validateForm); // NOVO: adicionado este listener
 
 // Função para enviar mensagem via Telegram
 async function sendTelegramMessage(message) {
@@ -194,11 +198,12 @@ acceptButton.addEventListener('click', async function() {
         // Limpar formulário (opcional)
         setTimeout(() => {
             alert('Contrato aceito com sucesso! Em até 5 dias úteis você receberá o sistema por e-mail.');
-            // Redirecionar para página de pagamento ou obrigado
-            // window.location.href = 'https://seusite.com/pagamento';
         }, 2000);
     } else {
         alert('Erro ao processar contrato. Por favor, entre em contato conosco.');
         acceptButton.disabled = false;
     }
 });
+
+// Inicializar validação
+validateForm();
