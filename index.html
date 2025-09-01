@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato Digital - Sistema de Controle de Importação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CONTRATO DE LICENÇA DE SOFTWARE</h1>
+            <p class="subtitle">Sistema de Controle de Importação - Licença de Uso Perpétuo</p>
+        </header>
+        
+        <h2>1. OBJETO DO CONTRATO</h2>
+        <p>Este contrato estabelece os termos e condições para licenciamento do Sistema de Controle de Importação, desenvolvido e comercializado por <span class="highlight">QG Digital</span>, doravante denominado LICENCIANTE, em favor do cliente adquirente, doravante denominado LICENCIADO.</p>
+        
+        <h2>2. DIREITOS CONCEDIDOS</h2>
+        <p>O LICENCIANTE concede ao LICENCIADO uma licença perpétua, não exclusiva e intransferível para uso do Sistema de Controle de Importação, de acordo com os termos deste contrato.</p>
+        
+        <h2>3. VALOR E FORMA DE PAGAMENTO</h2>
+        <p>O valor da licença é de R$ 1.897,00 (um mil, oitocentos e noventa e sete reais), podendo ser parcelado em até 12x no cartão de crédito ou à vista com desconto via PIX.</p>
+        
+        <h2>4. PRAZO DE ENTREGA</h2>
+        <p>O sistema será disponibilizado em até <span class="highlight">5 (cinco) dias úteis</span> após a confirmação do pagamento, exceto em casos de alta demanda, quando o prazo poderá ser estendido, com comunicação prévia ao LICENCIADO.</p>
+        
+        <h2>5. SUPORTE E ATUALIZAÇÕES</h2>
+        <p>O LICENCIANTE se compromete a fornecer:</p>
+        <ul>
+            <li>Correções de erros críticos do sistema por período de 30 dias</li>
+            <li>Manual de uso e vídeo aulas explicativas</li>
+            <li>Atualizações de segurança quando necessárias</li>
+        </ul>
+        <p>Novas funcionalidades e atualizações significativas serão comercializadas separadamente como produtos à parte.</p>
+        
+        <h2>6. LIMITAÇÕES E RESPONSABILIDADES</h2>
+        <p>O LICENCIADO concorda que:</p>
+        <ul>
+            <li>Não tentará modificar, descompilar ou realizar engenharia reversa do software</li>
+            <li>O LICENCIANTE não se responsabiliza por problemas decorrentes de modificações não autorizadas</li>
+            <li>O sistema é fornecido "como está", sem garantias de performance ou resultados específicos</li>
+        </ul>
+        
+        <h2>7. CHAVE DE LICENÇA</h2>
+        <p>A chave de ativação do sistema será gerada com base no CPF ou CNPJ do LICENCIADO, que deverá ser informado abaixo e será vinculado permanentemente à licença.</p>
+        
+        <h2>8. POLÍTICA DE REEMBOLSO</h2>
+        <p>Em virtude da natureza digital do produto e do acesso imediato aos materiais de suporte, <span class="highlight">não é possível conceder reembolso</span> após a liberação do sistema, exceto em casos de defeito técnico irreparável que impossibilite completamente o uso do software.</p>
+        
+        <div class="form-section">
+            <h2>DADOS DO LICENCIADO</h2>
+            
+            <div class="form-group">
+                <label for="nome">Nome Completo/Razão Social:</label>
+                <input type="text" id="nome" required>
+                <div class="error-message" id="nome-error">Por favor, informe seu nome completo</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="tipo-documento">Tipo de Documento:</label>
+                <select id="tipo-documento" required>
+                    <option value="">Selecione...</option>
+                    <option value="cpf">CPF</option>
+                    <option value="cnpj">CNPJ</option>
+                </select>
+                <div class="error-message" id="tipo-documento-error">Por favor, selecione o tipo de documento</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="documento">Número do Documento (será utilizado como chave de licença):</label>
+                <input type="text" id="documento" required placeholder="Selecione o tipo de documento primeiro">
+                <div class="error-message" id="documento-error">Por favor, informe um documento válido</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+                <div class="error-message" id="email-error">Por favor, informe um e-mail válido</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="telefone">Telefone/WhatsApp:</label>
+                <input type="tel" id="telefone" required placeholder="(43) 9 9999-9999">
+                <div class="error-message" id="telefone-error">Por favor, informe um telefone válido</div>
+            </div>
+        </div>
+        
+        <div class="signature-area">
+            <h2>ACEITAÇÃO DOS TERMOS</h2>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="termos" required>
+                <label for="termos">Declaro que li, compreendi e concordo com todos os termos e condições deste contrato, inclusive com a política de não reembolso após a liberação do sistema. Estou ciente de que a chave de licença será vinculada permanentemente ao meu CPF/CNPJ informado.</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="dados" required>
+                <label for="dados">Autorizo o uso dos meus dados para geração da licença e confirmação de autenticidade do sistema, conforme Lei Geral de Proteção de Dados (LGPD).</label>
+            </div>
+            
+            <div class="loading" id="loading">
+                <p>Enviando dados, por favor aguarde...</p>
+            </div>
+            
+            <div class="success-message" id="success-message">
+                <h3>CONTRATO ACEITO COM SUCESSO!</h3>
+                <p>Seus dados foram recebidos и em breve você receberá o sistema por e-mail.</p>
+            </div>
+            
+            <button class="btn" id="accept-button">CONCORDO E ACEITO OS TERMOS</button>
+        </div>
+        
+        <div class="contact-info">
+            <h3>CONTATOS PARA SUPORTE</h3>
+            <p><strong>E-mail:</strong> atendimento.qgdigital@gmail.com</p>
+            <p><strong>WhatsApp:</strong> (43) 9 9634-9824</p>
+            <p><strong>Chave PIX:</strong> 43996349824 (telefone)</p>
+        </div>
+        
+        <footer>
+            <p>QG Digital © 2023 - Todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
