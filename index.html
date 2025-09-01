@@ -13,19 +13,27 @@
             <p class="subtitle">Sistema de Controle de Importação - Licença de Uso Perpétuo</p>
         </header>
         
-        <h2>1. OBJETO DO CONTRATO</h2>
-        <p>Este contrato estabelece os termos e condições para licenciamento do Sistema de Controle de Importação, desenvolvido e comercializado por <span class="highlight">QG Digital</span>, doravante denominado LICENCIANTE, em favor do cliente adquirente, doravante denominado LICENCIADO.</p>
+        <div class="legal-notice">
+            <p><strong>CONTRATO ELECTRÔNICO COM VALIDADE JURÍDICA</strong> - Este instrumento contratual eletrônico é celebrado nos termos do artigo 1.060 do Código Civil Brasileiro, possuindo plena validade jurídica entre as partes.</p>
+        </div>
         
-        <h2>2. DIREITOS CONCEDIDOS</h2>
+        <h2>1. IDENTIFICAÇÃO DAS PARTES CONTRATANTES</h2>
+        <p><strong>LICENCIANTE:</strong> 60.291.431 FELIPE DOS SANTOS INDEJEJCZAK, CNPJ: 60.291.431/0001-86, com sede na Rua Geraldo Moreira Chacon, 145, Residencial Portal do Sol, Londrina - PR, CEP 86.082-770, doravante denominado LICENCIANTE.</p>
+        <p><strong>LICENCIADO:</strong> Cliente adquirente, cujos dados serão informados no formulário abaixo, doravante denominado LICENCIADO.</p>
+        
+        <h2>2. OBJETO DO CONTRATO</h2>
+        <p>Este contrato estabelece os termos e condições para licenciamento do Sistema de Controle de Importação, desenvolvido e comercializado pelo LICENCIANTE.</p>
+        
+        <h2>3. DIREITOS CONCEDIDOS</h2>
         <p>O LICENCIANTE concede ao LICENCIADO uma licença perpétua, não exclusiva e intransferível para uso do Sistema de Controle de Importação, de acordo com os termos deste contrato.</p>
         
-        <h2>3. VALOR E FORMA DE PAGAMENTO</h2>
+        <h2>4. VALOR E FORMA DE PAGAMENTO</h2>
         <p>O valor da licença é de R$ 1.897,00 (um mil, oitocentos e noventa e sete reais), podendo ser parcelado em até 12x no cartão de crédito ou à vista com desconto via PIX.</p>
         
-        <h2>4. PRAZO DE ENTREGA</h2>
+        <h2>5. PRAZO DE ENTREGA</h2>
         <p>O sistema será disponibilizado em até <span class="highlight">5 (cinco) dias úteis</span> após a confirmação do pagamento, exceto em casos de alta demanda, quando o prazo poderá ser estendido, com comunicação prévia ao LICENCIADO.</p>
         
-        <h2>5. SUPORTE E ATUALIZAÇÕES</h2>
+        <h2>6. SUPORTE E ATUALIZAÇÕES</h2>
         <p>O LICENCIANTE se compromete a fornecer:</p>
         <ul>
             <li>Correções de erros críticos do sistema por período de 30 dias</li>
@@ -34,7 +42,7 @@
         </ul>
         <p>Novas funcionalidades e atualizações significativas serão comercializadas separadamente como produtos à parte.</p>
         
-        <h2>6. LIMITAÇÕES E RESPONSABILIDADES</h2>
+        <h2>7. LIMITAÇÕES E RESPONSABILIDADES</h2>
         <p>O LICENCIADO concorda que:</p>
         <ul>
             <li>Não tentará modificar, descompilar ou realizar engenharia reversa do software</li>
@@ -42,11 +50,14 @@
             <li>O sistema é fornecido "como está", sem garantias de performance ou resultados específicos</li>
         </ul>
         
-        <h2>7. CHAVE DE LICENÇA</h2>
+        <h2>8. CHAVE DE LICENÇA</h2>
         <p>A chave de ativação do sistema será gerada com base no CPF ou CNPJ do LICENCIADO, que deverá ser informado abaixo e será vinculado permanentemente à licença.</p>
         
-        <h2>8. POLÍTICA DE REEMBOLSO</h2>
+        <h2>9. POLÍTICA DE REEMBOLSO</h2>
         <p>Em virtude da natureza digital do produto e do acesso imediato aos materiais de suporte, <span class="highlight">não é possível conceder reembolso</span> após a liberação do sistema, exceto em casos de defeito técnico irreparável que impossibilite completamente o uso do software.</p>
+        
+        <h2>10. ACEITAÇÃO ELETRÔNICA</h2>
+        <p>O LICENCIADO declara expressamente que está ciente de que a aceitação eletrônica deste contrato, mediante clique no botão de confirmação, tem validade jurídica plena, nos termos do artigo 1.060 do Código Civil Brasileiro.</p>
         
         <div class="form-section">
             <h2>DADOS DO LICENCIADO</h2>
@@ -95,8 +106,13 @@
             </div>
             
             <div class="checkbox-group">
-                <input type="checkbox" id="dados" required>
-                <label for="dados">Autorizo o uso dos meus dados para geração da licença e confirmação de autenticidade do sistema, conforme Lei Geral de Proteção de Dados (LGPD).</label>
+                <input type="checkbox" id="lgpd" required>
+                <label for="lgpd">Autorizo o uso dos meus dados para geração da licença e confirmação de autenticidade do sistema, conforme Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018).</label>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="eletronico" required>
+                <label for="eletronico">Reconheço que este contrato eletrônico possui validade jurídica plena, nos termos do artigo 1.060 do Código Civil Brasileiro, equiparando-se ao contrato físico assinado manualmente.</label>
             </div>
             
             <div class="loading" id="loading">
@@ -105,14 +121,23 @@
             
             <div class="success-message" id="success-message">
                 <h3>CONTRATO ACEITO COM SUCESSO!</h3>
-                <p>Seus dados foram recebidos и em breve você receberá o sistema por e-mail.</p>
+                <p>Seus dados foram recebidos e em breve você receberá o sistema por e-mail.</p>
+                <p>Um comprovante deste contrato foi enviado para seu e-mail.</p>
             </div>
             
             <button class="btn" id="accept-button">CONCORDO E ACEITO OS TERMOS</button>
+            
+            <div class="contract-hash" id="contract-hash" style="display: none; margin-top: 20px; font-size: 12px; color: #777;">
+                <p>Hash de verificação: <span id="hash-value"></span></p>
+                <p>Data/hora da aceitação: <span id="acceptance-date"></span></p>
+            </div>
         </div>
         
         <div class="contact-info">
             <h3>CONTATOS PARA SUPORTE</h3>
+            <p><strong>Razão Social:</strong> 60.291.431 FELIPE DOS SANTOS INDEJEJCZAK</p>
+            <p><strong>CNPJ:</strong> 60.291.431/0001-86</p>
+            <p><strong>Endereço:</strong> Rua Geraldo Moreira Chacon, 145, Residencial Portal do Sol, Londrina - PR, CEP 86.082-770</p>
             <p><strong>E-mail:</strong> atendimento.qgdigital@gmail.com</p>
             <p><strong>WhatsApp:</strong> (43) 9 9634-9824</p>
             <p><strong>Chave PIX:</strong> 43996349824 (telefone)</p>
@@ -120,6 +145,7 @@
         
         <footer>
             <p>QG Digital © 2023 - Todos os direitos reservados</p>
+            <p>CNPJ: 60.291.431/0001-86</p>
         </footer>
     </div>
 
